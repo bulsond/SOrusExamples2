@@ -16,6 +16,7 @@ namespace WinFormsUI
     {
         private InputView _inputView;
         private DownloadService _service;
+        private BindingSource _bsItems;
 
         public FormMain()
         {
@@ -32,7 +33,6 @@ namespace WinFormsUI
 
         private void SetBinding()
         {
-            
             _textBoxAddress.DataBindings.Add("Text", _inputView,
                 nameof(InputView.Address), true, DataSourceUpdateMode.OnPropertyChanged);
             _textBoxParam.DataBindings.Add("Text", _inputView,
@@ -41,6 +41,14 @@ namespace WinFormsUI
                 nameof(InputView.From), true, DataSourceUpdateMode.OnPropertyChanged);
             _textBoxTo.DataBindings.Add("Text", _inputView,
                 nameof(InputView.To), true, DataSourceUpdateMode.OnPropertyChanged);
+
+            _bsItems = new BindingSource();
+            _bsItems.DataSource = typeof(List<Item>);
+            _dataGridView.AutoGenerateColumns = false;
+            _dataGridView.DataSource = _bsItems;
+            _columnNumber.DataPropertyName = nameof(Item.Number);
+            _columnAddress.DataPropertyName = nameof(Item.Address);
+            _columnResponse.DataPropertyName = nameof(Item.Response);
         }
 
         private async void ButtonStart_Click(object sender, EventArgs e)
@@ -48,6 +56,10 @@ namespace WinFormsUI
             var items = _inputView.GetItems();
             if (items.Count == 0)
             {
+                var message = "Требуется правильное заполнение полей.";
+                var caption = "Сообщение";
+                MessageBox.Show(message, caption,
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 

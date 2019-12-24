@@ -37,9 +37,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this._textBoxTo = new System.Windows.Forms.TextBox();
             this._buttonStart = new System.Windows.Forms.Button();
-            this._listView1Results = new System.Windows.Forms.ListView();
             this._progressBar = new System.Windows.Forms.ProgressBar();
             this._buttonCancel = new System.Windows.Forms.Button();
+            this._dataGridView = new System.Windows.Forms.DataGridView();
+            this._columnNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._columnAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._columnResponse = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this._dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // _textBoxAddress
@@ -115,16 +119,6 @@
             this._buttonStart.Text = "Запуск";
             this._buttonStart.UseVisualStyleBackColor = true;
             // 
-            // _listView1Results
-            // 
-            this._listView1Results.HideSelection = false;
-            this._listView1Results.Location = new System.Drawing.Point(30, 79);
-            this._listView1Results.Name = "_listView1Results";
-            this._listView1Results.Size = new System.Drawing.Size(683, 261);
-            this._listView1Results.TabIndex = 7;
-            this._listView1Results.UseCompatibleStateImageBehavior = false;
-            this._listView1Results.View = System.Windows.Forms.View.List;
-            // 
             // _progressBar
             // 
             this._progressBar.Location = new System.Drawing.Point(741, 48);
@@ -142,14 +136,50 @@
             this._buttonCancel.Text = "Отмена";
             this._buttonCancel.UseVisualStyleBackColor = true;
             // 
+            // _dataGridView
+            // 
+            this._dataGridView.AllowUserToAddRows = false;
+            this._dataGridView.AllowUserToDeleteRows = false;
+            this._dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this._dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this._columnNumber,
+            this._columnAddress,
+            this._columnResponse});
+            this._dataGridView.Location = new System.Drawing.Point(30, 94);
+            this._dataGridView.Name = "_dataGridView";
+            this._dataGridView.ReadOnly = true;
+            this._dataGridView.Size = new System.Drawing.Size(683, 244);
+            this._dataGridView.TabIndex = 10;
+            // 
+            // _columnNumber
+            // 
+            this._columnNumber.HeaderText = "Н/П";
+            this._columnNumber.Name = "_columnNumber";
+            this._columnNumber.ReadOnly = true;
+            this._columnNumber.Width = 50;
+            // 
+            // _columnAddress
+            // 
+            this._columnAddress.HeaderText = "Адрес";
+            this._columnAddress.Name = "_columnAddress";
+            this._columnAddress.ReadOnly = true;
+            this._columnAddress.Width = 300;
+            // 
+            // _columnResponse
+            // 
+            this._columnResponse.HeaderText = "Ответ";
+            this._columnResponse.Name = "_columnResponse";
+            this._columnResponse.ReadOnly = true;
+            this._columnResponse.Width = 300;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(836, 367);
+            this.Controls.Add(this._dataGridView);
             this.Controls.Add(this._buttonCancel);
             this.Controls.Add(this._progressBar);
-            this.Controls.Add(this._listView1Results);
             this.Controls.Add(this._buttonStart);
             this.Controls.Add(this._textBoxTo);
             this.Controls.Add(this.label4);
@@ -161,6 +191,7 @@
             this.Controls.Add(this._textBoxAddress);
             this.Name = "FormMain";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this._dataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -177,9 +208,12 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox _textBoxTo;
         private System.Windows.Forms.Button _buttonStart;
-        private System.Windows.Forms.ListView _listView1Results;
         private System.Windows.Forms.ProgressBar _progressBar;
         private System.Windows.Forms.Button _buttonCancel;
+        private System.Windows.Forms.DataGridView _dataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _columnNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _columnAddress;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _columnResponse;
     }
 }
 
