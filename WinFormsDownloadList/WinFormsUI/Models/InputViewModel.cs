@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace WinFormsUI.Models
 {
-    class InputView
+    class InputViewModel
     {
         public string Address { get; set; }
         public string Parameter { get; set; }

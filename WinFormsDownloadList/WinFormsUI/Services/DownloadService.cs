@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
 using System.Net;
-using System.Net.Http;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using WinFormsUI.Models;
@@ -17,8 +13,10 @@ namespace WinFormsUI.Services
         {
             foreach (var item in items)
             {
+                //если нужно отменять досрочно
                 if (token.IsCancellationRequested)
                     break;
+
                 item.Response = await Task.Run(() => GetResponse(item));
                 progress.Report(item.Number);
             }

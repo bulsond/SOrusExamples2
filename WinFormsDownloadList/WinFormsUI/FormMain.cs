@@ -15,9 +15,13 @@ namespace WinFormsUI
 {
     public partial class FormMain : Form
     {
-        private InputView _inputView;
+        //вводимые данные
+        private InputViewModel _inputViewModel;
+        //сервис работы с сетью
         private DownloadService _service;
+        //источник токена отмена загрузки
         private CancellationTokenSource _tcs;
+        //источник данных для DGV
         private BindingSource _bsItems;
 
         public FormMain()
@@ -26,25 +30,31 @@ namespace WinFormsUI
 
             this.Text = "Пример";
             this.StartPosition = FormStartPosition.CenterScreen;
-
-            _inputView = new InputView();
+            //иниц. сервиса
             _service = new DownloadService();
+            //привязки
             SetBinding();
+            //кнопки
             _buttonStart.Click += ButtonStart_Click;
             _buttonCancel.Click += ButtonCancel_Click;
         }
 
+        /// <summary>
+        /// Установка привязок
+        /// </summary>
         private void SetBinding()
         {
-            _textBoxAddress.DataBindings.Add("Text", _inputView,
-                nameof(InputView.Address), true, DataSourceUpdateMode.OnPropertyChanged);
-            _textBoxParam.DataBindings.Add("Text", _inputView,
-                nameof(InputView.Parameter), true, DataSourceUpdateMode.OnPropertyChanged);
-            _textBoxFrom.DataBindings.Add("Text", _inputView,
-                nameof(InputView.From), true, DataSourceUpdateMode.OnPropertyChanged);
-            _textBoxTo.DataBindings.Add("Text", _inputView,
-                nameof(InputView.To), true, DataSourceUpdateMode.OnPropertyChanged);
-
+            //текстбоксы
+            _inputViewModel = new InputViewModel();
+            _textBoxAddress.DataBindings.Add("Text", _inputViewModel,
+                nameof(InputViewModel.Address), true, DataSourceUpdateMode.OnPropertyChanged);
+            _textBoxParam.DataBindings.Add("Text", _inputViewModel,
+                nameof(InputViewModel.Parameter), true, DataSourceUpdateMode.OnPropertyChanged);
+            _textBoxFrom.DataBindings.Add("Text", _inputViewModel,
+                nameof(InputViewModel.From), true, DataSourceUpdateMode.OnPropertyChanged);
+            _textBoxTo.DataBindings.Add("Text", _inputViewModel,
+                nameof(InputViewModel.To), true, DataSourceUpdateMode.OnPropertyChanged);
+            //DGV
             _bsItems = new BindingSource();
             _bsItems.DataSource = typeof(List<Item>);
             _dataGridView.AutoGenerateColumns = false;
@@ -54,9 +64,14 @@ namespace WinFormsUI
             _columnResponse.DataPropertyName = nameof(Item.Response);
         }
 
+        /// <summary>
+        /// Кнопка Старт
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void ButtonStart_Click(object sender, EventArgs e)
         {
-            var items = _inputView.GetItems();
+            var items = _inputViewModel.GetItems();
             if (items.Count == 0)
             {
                 var message = "Требуется правильное заполнение полей.";
@@ -96,6 +111,11 @@ namespace WinFormsUI
             }
         }
 
+        /// <summary>
+        /// Кнопка Отмена
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonCancel_Click(object sender, EventArgs e)
         {
             _tcs.Cancel();
