@@ -14,11 +14,10 @@ namespace WinFormsUI.Services
     {
         public async Task GetItemsResposesAsync(List<Item> items, IProgress<int> progress)
         {
-            int count = 0;
             foreach (var item in items)
             {
                 item.Response = await Task.Run(() => GetResponse(item));
-                progress.Report(++count);
+                progress.Report(item.Number);
             }
         }
 

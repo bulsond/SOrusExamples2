@@ -4,6 +4,7 @@ namespace WinFormsUI.Models
 {
     public class Item
     {
+        public int Number { get; set; }
         public string Address { get; }
         public string Response { get; set; }
 
