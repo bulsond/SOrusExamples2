@@ -41,9 +41,8 @@ namespace WinFormsUI
 
         private void ButtonStart_Click(object sender, EventArgs e)
         {
-            var address = _inputView.Address;
+            var items = _inputView.GetItems();
 
-            throw new NotImplementedException();
         }
     }
 }
