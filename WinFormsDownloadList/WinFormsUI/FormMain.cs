@@ -73,6 +73,8 @@ namespace WinFormsUI
             });
             await _service.GetItemsResposesAsync(items, progress);
 
+            _bsItems.Clear();
+            items.ForEach(i => _bsItems.Add(i));
         }
     }
 }
