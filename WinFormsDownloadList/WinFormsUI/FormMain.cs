@@ -103,6 +103,8 @@ namespace WinFormsUI
             //кнопки
             _buttonCancel.Enabled = true;
             _buttonStart.Enabled = false;
+            //убираем преж.результаты
+            _bsItems.Clear();
 
             //прогрессбар
             _progressBar.Maximum = items.Count;
@@ -122,12 +124,13 @@ namespace WinFormsUI
             }
             finally
             {
+                //освобождаем источник
                 _tcs.Dispose();
+                //кнопки
                 _buttonCancel.Enabled = false;
                 _buttonStart.Enabled = true;
                 _progressBar.Value = 0;
                 //отображаем результаты
-                _bsItems.Clear();
                 items.ForEach(i => _bsItems.Add(i));
             }
         }
