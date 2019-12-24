@@ -43,10 +43,20 @@ namespace WinFormsUI
                 nameof(InputView.To), true, DataSourceUpdateMode.OnPropertyChanged);
         }
 
-        private void ButtonStart_Click(object sender, EventArgs e)
+        private async void ButtonStart_Click(object sender, EventArgs e)
         {
             var items = _inputView.GetItems();
-            List<Item> items1 = _service.LoadItems(items);
+            if (items.Count == 0)
+            {
+                return;
+            }
+
+            _progressBar.Maximum = items.Count;
+            var progress = new Progress<int>((p) =>
+            {
+                _progressBar.Value = p;
+            });
+            await _service.GetItemsResposesAsync(items, progress);
 
         }
     }

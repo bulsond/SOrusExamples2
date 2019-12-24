@@ -38,6 +38,7 @@
             this._textBoxTo = new System.Windows.Forms.TextBox();
             this._buttonStart = new System.Windows.Forms.Button();
             this._listView1Results = new System.Windows.Forms.ListView();
+            this._progressBar = new System.Windows.Forms.ProgressBar();
             this.SuspendLayout();
             // 
             // _textBoxAddress
@@ -123,11 +124,19 @@
             this._listView1Results.UseCompatibleStateImageBehavior = false;
             this._listView1Results.View = System.Windows.Forms.View.List;
             // 
+            // _progressBar
+            // 
+            this._progressBar.Location = new System.Drawing.Point(741, 48);
+            this._progressBar.Name = "_progressBar";
+            this._progressBar.Size = new System.Drawing.Size(75, 23);
+            this._progressBar.TabIndex = 8;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(836, 367);
+            this.Controls.Add(this._progressBar);
             this.Controls.Add(this._listView1Results);
             this.Controls.Add(this._buttonStart);
             this.Controls.Add(this._textBoxTo);
@@ -157,6 +166,7 @@
         private System.Windows.Forms.TextBox _textBoxTo;
         private System.Windows.Forms.Button _buttonStart;
         private System.Windows.Forms.ListView _listView1Results;
+        private System.Windows.Forms.ProgressBar _progressBar;
     }
 }
 

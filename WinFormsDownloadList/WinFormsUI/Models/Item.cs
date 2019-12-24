@@ -5,7 +5,7 @@ namespace WinFormsUI.Models
     public class Item
     {
         public string Address { get; }
-        public string Answer { get; set; }
+        public string Response { get; set; }
 
         public Item(string address)
         {
@@ -13,7 +13,7 @@ namespace WinFormsUI.Models
                 throw new ArgumentException(nameof(address));
 
             Address = address;
-            Answer = String.Empty;
+            Response = String.Empty;
         }
     }
 }
