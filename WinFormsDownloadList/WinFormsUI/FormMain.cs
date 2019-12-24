@@ -55,7 +55,7 @@ namespace WinFormsUI
             items.ForEach(i => i.Number = ++number);
 
             _progressBar.Maximum = items.Count;
-            var progress = new Progress<int>((p) =>
+            var progress = new Progress<int>(p =>
             {
                 _progressBar.Value = p;
             });

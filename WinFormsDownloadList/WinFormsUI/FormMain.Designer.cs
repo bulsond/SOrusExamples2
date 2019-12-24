@@ -39,6 +39,7 @@
             this._buttonStart = new System.Windows.Forms.Button();
             this._listView1Results = new System.Windows.Forms.ListView();
             this._progressBar = new System.Windows.Forms.ProgressBar();
+            this._buttonCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // _textBoxAddress
@@ -131,11 +132,22 @@
             this._progressBar.Size = new System.Drawing.Size(75, 23);
             this._progressBar.TabIndex = 8;
             // 
+            // _buttonCancel
+            // 
+            this._buttonCancel.Enabled = false;
+            this._buttonCancel.Location = new System.Drawing.Point(741, 94);
+            this._buttonCancel.Name = "_buttonCancel";
+            this._buttonCancel.Size = new System.Drawing.Size(75, 23);
+            this._buttonCancel.TabIndex = 9;
+            this._buttonCancel.Text = "Отмена";
+            this._buttonCancel.UseVisualStyleBackColor = true;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(836, 367);
+            this.Controls.Add(this._buttonCancel);
             this.Controls.Add(this._progressBar);
             this.Controls.Add(this._listView1Results);
             this.Controls.Add(this._buttonStart);
@@ -167,6 +179,7 @@
         private System.Windows.Forms.Button _buttonStart;
         private System.Windows.Forms.ListView _listView1Results;
         private System.Windows.Forms.ProgressBar _progressBar;
+        private System.Windows.Forms.Button _buttonCancel;
     }
 }
 
