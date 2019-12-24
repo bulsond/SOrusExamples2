@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinFormsUI.Models;
@@ -16,6 +17,7 @@ namespace WinFormsUI
     {
         private InputView _inputView;
         private DownloadService _service;
+        private CancellationTokenSource _tcs;
         private BindingSource _bsItems;
 
         public FormMain()
@@ -29,6 +31,7 @@ namespace WinFormsUI
             _service = new DownloadService();
             SetBinding();
             _buttonStart.Click += ButtonStart_Click;
+            _buttonCancel.Click += ButtonCancel_Click;
         }
 
         private void SetBinding()
@@ -66,15 +69,36 @@ namespace WinFormsUI
             int number = 0;
             items.ForEach(i => i.Number = ++number);
 
+            _buttonCancel.Enabled = true;
+            _buttonStart.Enabled = false;
+
             _progressBar.Maximum = items.Count;
             var progress = new Progress<int>(p =>
             {
                 _progressBar.Value = p;
             });
-            await _service.GetItemsResposesAsync(items, progress);
+            _tcs = new CancellationTokenSource();
+            var token = _tcs.Token;
 
-            _bsItems.Clear();
-            items.ForEach(i => _bsItems.Add(i));
+            try
+            {
+                await _service.GetItemsResposesAsync(items, progress, token);
+            }
+            finally
+            {
+                _tcs.Dispose();
+                _buttonCancel.Enabled = false;
+                _buttonStart.Enabled = true;
+                _progressBar.Value = 0;
+
+                _bsItems.Clear();
+                items.ForEach(i => _bsItems.Add(i));
+            }
+        }
+
+        private void ButtonCancel_Click(object sender, EventArgs e)
+        {
+            _tcs.Cancel();
         }
     }
 }
