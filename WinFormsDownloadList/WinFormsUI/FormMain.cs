@@ -71,7 +71,7 @@ namespace WinFormsUI
         /// <param name="e"></param>
         private async void ButtonStart_Click(object sender, EventArgs e)
         {
-            var items = _inputViewModel.GetItems();
+            var items = GetItemsFromInput();
             if (items.Count == 0)
             {
                 var message = "Требуется правильное заполнение полей.";
@@ -80,23 +80,44 @@ namespace WinFormsUI
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
+            await LoadAndShowResponses(items);
+        }
 
+        private List<Item> GetItemsFromInput()
+        {
+            var items = _inputViewModel.GetItems();
+            //пронумеруем
             int number = 0;
             items.ForEach(i => i.Number = ++number);
 
+            return items;
+        }
+
+        /// <summary>
+        /// Загрузка и отображение результатов
+        /// </summary>
+        /// <param name="items"></param>
+        /// <returns></returns>
+        private async Task LoadAndShowResponses(List<Item> items)
+        {
+            //кнопки
             _buttonCancel.Enabled = true;
             _buttonStart.Enabled = false;
 
+            //прогрессбар
             _progressBar.Maximum = items.Count;
             var progress = new Progress<int>(p =>
             {
                 _progressBar.Value = p;
             });
+            //источник токена отмены задачи
             _tcs = new CancellationTokenSource();
+            //токен отмены
             var token = _tcs.Token;
 
             try
             {
+                //работаем с сетью
                 await _service.GetItemsResposesAsync(items, progress, token);
             }
             finally
@@ -105,7 +126,7 @@ namespace WinFormsUI
                 _buttonCancel.Enabled = false;
                 _buttonStart.Enabled = true;
                 _progressBar.Value = 0;
-
+                //отображаем результаты
                 _bsItems.Clear();
                 items.ForEach(i => _bsItems.Add(i));
             }
@@ -118,6 +139,9 @@ namespace WinFormsUI
         /// <param name="e"></param>
         private void ButtonCancel_Click(object sender, EventArgs e)
         {
+            if (_tcs is null)
+                return;
+            //отменяем досрочно загрузку
             _tcs.Cancel();
         }
     }
