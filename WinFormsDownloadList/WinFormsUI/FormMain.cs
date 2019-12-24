@@ -8,12 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinFormsUI.Models;
+using WinFormsUI.Services;
 
 namespace WinFormsUI
 {
     public partial class FormMain : Form
     {
         private InputView _inputView;
+        private DownloadService _service;
 
         public FormMain()
         {
@@ -22,13 +24,15 @@ namespace WinFormsUI
             this.Text = "Пример";
             this.StartPosition = FormStartPosition.CenterScreen;
 
+            _inputView = new InputView();
+            _service = new DownloadService();
             SetBinding();
             _buttonStart.Click += ButtonStart_Click;
         }
 
         private void SetBinding()
         {
-            _inputView = new InputView();
+            
             _textBoxAddress.DataBindings.Add("Text", _inputView,
                 nameof(InputView.Address), true, DataSourceUpdateMode.OnPropertyChanged);
             _textBoxParam.DataBindings.Add("Text", _inputView,
@@ -42,6 +46,7 @@ namespace WinFormsUI
         private void ButtonStart_Click(object sender, EventArgs e)
         {
             var items = _inputView.GetItems();
+            List<Item> items1 = _service.LoadItems(items);
 
         }
     }
