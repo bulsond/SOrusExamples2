@@ -9,6 +9,13 @@ namespace WinFormsUI.Services
 {
     class DownloadService
     {
+        /// <summary>
+        /// Получение ответов по списку адресов
+        /// </summary>
+        /// <param name="items">список адресов</param>
+        /// <param name="progress">отображение прогресса выполения</param>
+        /// <param name="token">токен отмены</param>
+        /// <returns></returns>
         public async Task GetItemsResposesAsync(List<Item> items, IProgress<int> progress, CancellationToken token)
         {
             foreach (var item in items)
