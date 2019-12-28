@@ -24,6 +24,8 @@ namespace WinFormsListViewPrint
             this.StartPosition = FormStartPosition.CenterScreen;
 
             SetupListView();
+            //связываем диалог печати с документом
+            _printPreviewDialog.Document = _printDocument;
 
             _buttonAdd.Click += ButtonAdd_Click;
             _buttonPrint.Click += ButtonPrint_Click;

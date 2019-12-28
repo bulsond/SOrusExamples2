@@ -122,13 +122,12 @@
             this._printPreviewDialog.AutoScrollMargin = new System.Drawing.Size(0, 0);
             this._printPreviewDialog.AutoScrollMinSize = new System.Drawing.Size(0, 0);
             this._printPreviewDialog.ClientSize = new System.Drawing.Size(400, 300);
-            this._printPreviewDialog.Document = this._printDocument;
             this._printPreviewDialog.Enabled = true;
             this._printPreviewDialog.Icon = ((System.Drawing.Icon)(resources.GetObject("_printPreviewDialog.Icon")));
             this._printPreviewDialog.Name = "_printPreviewDialog";
             this._printPreviewDialog.Visible = false;
             // 
-            // Form1
+            // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -142,7 +141,7 @@
             this.Controls.Add(this._textBoxMiddleName);
             this.Controls.Add(this._textBoxFirstName);
             this.Controls.Add(this._textBoxLastName);
-            this.Name = "Form1";
+            this.Name = "FormMain";
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
