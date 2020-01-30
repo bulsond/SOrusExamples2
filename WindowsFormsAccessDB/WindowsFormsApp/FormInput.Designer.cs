@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this._textBoxMiddleName = new System.Windows.Forms.TextBox();
             this._textBoxLastName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -42,6 +43,8 @@
             this._textBoxPassword2 = new System.Windows.Forms.TextBox();
             this._buttonCancel = new System.Windows.Forms.Button();
             this._buttonOk = new System.Windows.Forms.Button();
+            this._errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this._errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // _textBoxMiddleName
@@ -160,6 +163,11 @@
             this._buttonOk.Text = "OK";
             this._buttonOk.UseVisualStyleBackColor = true;
             // 
+            // _errorProvider
+            // 
+            this._errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this._errorProvider.ContainerControl = this;
+            // 
             // FormInput
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -181,6 +189,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FormInput";
             this.Text = "FormInput";
+            ((System.ComponentModel.ISupportInitialize)(this._errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -202,5 +211,6 @@
         private System.Windows.Forms.TextBox _textBoxPassword2;
         private System.Windows.Forms.Button _buttonCancel;
         private System.Windows.Forms.Button _buttonOk;
+        private System.Windows.Forms.ErrorProvider _errorProvider;
     }
 }
