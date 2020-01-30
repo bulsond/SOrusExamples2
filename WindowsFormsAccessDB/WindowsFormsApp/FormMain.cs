@@ -89,8 +89,8 @@ namespace WindowsFormsApp
             int result = await _data.AddPersonAsync(person);
             if (result > 0)
             {
-                //отображаем нового
-                _bsPeople.Add(person);
+                //перезагружаем список людей из БД
+                LoadPeople();
             }
             else
             {
