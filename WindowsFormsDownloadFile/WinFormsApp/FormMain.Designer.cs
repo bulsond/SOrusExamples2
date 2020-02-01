@@ -36,6 +36,10 @@
             this._buttonCancel = new System.Windows.Forms.Button();
             this._buttonStart = new System.Windows.Forms.Button();
             this._labelReport = new System.Windows.Forms.Label();
+            this._saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.label3 = new System.Windows.Forms.Label();
+            this._labelSize = new System.Windows.Forms.Label();
+            this._progressBar = new System.Windows.Forms.ProgressBar();
             this.SuspendLayout();
             // 
             // label1
@@ -52,7 +56,7 @@
             this._textBoxUrl.Location = new System.Drawing.Point(118, 26);
             this._textBoxUrl.Name = "_textBoxUrl";
             this._textBoxUrl.Size = new System.Drawing.Size(592, 20);
-            this._textBoxUrl.TabIndex = 1;
+            this._textBoxUrl.TabIndex = 0;
             // 
             // label2
             // 
@@ -85,7 +89,7 @@
             this._buttonCancel.Location = new System.Drawing.Point(539, 122);
             this._buttonCancel.Name = "_buttonCancel";
             this._buttonCancel.Size = new System.Drawing.Size(75, 23);
-            this._buttonCancel.TabIndex = 3;
+            this._buttonCancel.TabIndex = 4;
             this._buttonCancel.Text = "Отменить";
             this._buttonCancel.UseVisualStyleBackColor = true;
             // 
@@ -94,7 +98,7 @@
             this._buttonStart.Location = new System.Drawing.Point(635, 122);
             this._buttonStart.Name = "_buttonStart";
             this._buttonStart.Size = new System.Drawing.Size(75, 23);
-            this._buttonStart.TabIndex = 4;
+            this._buttonStart.TabIndex = 3;
             this._buttonStart.Text = "Скачать";
             this._buttonStart.UseVisualStyleBackColor = true;
             // 
@@ -102,16 +106,45 @@
             // 
             this._labelReport.AutoSize = true;
             this._labelReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this._labelReport.Location = new System.Drawing.Point(396, 122);
+            this._labelReport.Location = new System.Drawing.Point(471, 122);
             this._labelReport.Name = "_labelReport";
-            this._labelReport.Size = new System.Drawing.Size(0, 20);
+            this._labelReport.Size = new System.Drawing.Size(50, 20);
             this._labelReport.TabIndex = 5;
+            this._labelReport.Text = "100%";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(19, 127);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(81, 13);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Размер файла";
+            // 
+            // _labelSize
+            // 
+            this._labelSize.AutoSize = true;
+            this._labelSize.Location = new System.Drawing.Point(115, 127);
+            this._labelSize.Name = "_labelSize";
+            this._labelSize.Size = new System.Drawing.Size(13, 13);
+            this._labelSize.TabIndex = 6;
+            this._labelSize.Text = "0";
+            // 
+            // _progressBar
+            // 
+            this._progressBar.Location = new System.Drawing.Point(333, 122);
+            this._progressBar.Name = "_progressBar";
+            this._progressBar.Size = new System.Drawing.Size(132, 23);
+            this._progressBar.TabIndex = 7;
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(741, 175);
+            this.Controls.Add(this._progressBar);
+            this.Controls.Add(this._labelSize);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this._labelReport);
             this.Controls.Add(this._buttonCancel);
             this.Controls.Add(this._buttonStart);
@@ -138,6 +171,10 @@
         private System.Windows.Forms.Button _buttonCancel;
         private System.Windows.Forms.Button _buttonStart;
         private System.Windows.Forms.Label _labelReport;
+        private System.Windows.Forms.SaveFileDialog _saveFileDialog;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label _labelSize;
+        private System.Windows.Forms.ProgressBar _progressBar;
     }
 }
 
