@@ -1,6 +1,5 @@
 ﻿using System;
 using System.ComponentModel;
-using System.Reflection;
 
 namespace WindowsFormsApp.Models
 {
@@ -57,10 +56,11 @@ namespace WindowsFormsApp.Models
         /// <returns></returns>
         public bool IsValid()
         {
-            var error = this["FirstName"];
-            error = this["LastName"];
+            var errorFN = this["FirstName"];
+            var errorLN = this["LastName"];
 
-            return !String.IsNullOrEmpty(Error);
+            _Error = errorFN + " " + errorLN;
+            return String.IsNullOrWhiteSpace(Error);
         }
     }
 }

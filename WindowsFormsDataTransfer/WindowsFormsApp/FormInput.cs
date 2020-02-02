@@ -37,7 +37,7 @@ namespace WindowsFormsApp
         {
             
             //проверяем введенные данные на валидность
-            if (_person.IsValid())
+            if (!_person.IsValid())
             {
                 var message = $"Не все данные введены верно!\n{_person.Error}";
                 var caption = "Предупреждение";
