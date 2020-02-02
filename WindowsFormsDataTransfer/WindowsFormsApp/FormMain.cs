@@ -12,9 +12,24 @@ namespace WindowsFormsApp
 {
     public partial class FormMain : Form
     {
+        private FormInput _inputForm;
+
         public FormMain()
         {
             InitializeComponent();
+
+            _buttonOpenInput.Click += ButtonOpenInput_Click;
+        }
+
+        private void ButtonOpenInput_Click(object sender, EventArgs e)
+        {
+            if (_inputForm != null)
+                return;
+
+            _inputForm = new FormInput();
+            _inputForm.Owner = this;
+            _inputForm.StartPosition = FormStartPosition.CenterParent;
+            _inputForm.Show();
         }
     }
 }
