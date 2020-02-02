@@ -28,7 +28,6 @@ namespace WindowsFormsApp
 
             _inputForm = new FormInput();
             _inputForm.Owner = this;
-            _inputForm.StartPosition = FormStartPosition.CenterParent;
             _inputForm.Show();
         }
     }

@@ -52,7 +52,7 @@
             this._textBoxFirstName.Location = new System.Drawing.Point(71, 12);
             this._textBoxFirstName.Name = "_textBoxFirstName";
             this._textBoxFirstName.Size = new System.Drawing.Size(126, 20);
-            this._textBoxFirstName.TabIndex = 1;
+            this._textBoxFirstName.TabIndex = 0;
             // 
             // label2
             // 
@@ -94,7 +94,7 @@
             this.Controls.Add(this._textBoxFirstName);
             this.Controls.Add(this.label1);
             this.Name = "FormInput";
-            this.Text = "FormInput";
+            this.Text = "Добавление";
             ((System.ComponentModel.ISupportInitialize)(this._errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
