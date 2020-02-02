@@ -8,3 +8,4 @@
 - WindowsFormsAccessDB - CRUD с Access БД и валидацией вводимых данных https://ru.stackoverflow.com/a/1076493/222542
 - WindowsFormsTimerPosts - асинхр. запросы к API в MDI окне https://ru.stackoverflow.com/q/1076393/222542
 - WindowsFormsDownloadFile - загрузка файлов с помощью HttpClient
+- WindowsFormsDataTransfer - перенос данных между формами, ErrorProvider, привязки https://ru.stackoverflow.com/q/1076641/222542
