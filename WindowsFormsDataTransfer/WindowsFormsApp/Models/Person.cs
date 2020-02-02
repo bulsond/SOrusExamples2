@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Reflection;
 
 namespace WindowsFormsApp.Models
 {
@@ -49,5 +50,17 @@ namespace WindowsFormsApp.Models
             return _Error;
         }
         #endregion
+
+        /// <summary>
+        /// Валиден ли данный чел.
+        /// </summary>
+        /// <returns></returns>
+        public bool IsValid()
+        {
+            var error = this["FirstName"];
+            error = this["LastName"];
+
+            return !String.IsNullOrEmpty(Error);
+        }
     }
 }
