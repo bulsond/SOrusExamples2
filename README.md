@@ -9,3 +9,4 @@
 - WindowsFormsTimerPosts - асинхр. запросы к API в MDI окне https://ru.stackoverflow.com/q/1076393/222542
 - WindowsFormsDownloadFile - загрузка файлов с помощью HttpClient
 - WindowsFormsDataTransfer - перенос данных между формами, ErrorProvider, привязки https://ru.stackoverflow.com/q/1076641/222542
+- YandexDictAndTrans - работа с API Яндекс.Переводчик и Словарь https://ru.stackoverflow.com/q/1091429/222542
