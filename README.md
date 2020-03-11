@@ -10,3 +10,4 @@
 - WindowsFormsDownloadFile - загрузка файлов с помощью HttpClient
 - WindowsFormsDataTransfer - перенос данных между формами, ErrorProvider, привязки https://ru.stackoverflow.com/q/1076641/222542
 - YandexDictAndTrans - работа с API Яндекс.Переводчик и Словарь https://ru.stackoverflow.com/q/1091429/222542
+- XmlAndDb - чтение и запись в XML файл, чтение данных из БД и запись в XML https://ru.stackoverflow.com/a/1093213/222542
