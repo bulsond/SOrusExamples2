@@ -1,0 +1,7 @@
+﻿CREATE TABLE [dbo].[Noties]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [Date] DATE NOT NULL DEFAULT GETDATE(), 
+    [Diagnosis] NVARCHAR(50) NOT NULL, 
+    [Price] MONEY NULL
+)
