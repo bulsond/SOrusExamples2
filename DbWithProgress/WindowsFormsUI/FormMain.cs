@@ -104,7 +104,7 @@ namespace WindowsFormsUI
                             //пока есть записи в таблице
                             while (await reader.ReadAsync())
                             {
-                                //получаем второй столбец
+                                //получаем столбец
                                 var column = reader.GetString(0);
                                 var bytes = Encoding.UTF8.GetBytes(column);
                                 //пишем в файл
