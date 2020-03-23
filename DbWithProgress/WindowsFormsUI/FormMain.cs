@@ -93,7 +93,7 @@ namespace WindowsFormsUI
                         await reader.ReadAsync();
                         countRecords = reader.GetInt32(0);
                     }
-                    //записываем данные из таблицы в файл
+                    //если есть данные по второй части запроса
                     if (await reader.NextResultAsync())
                     {
                         //открываем файл на запись
