@@ -12,3 +12,4 @@
 - YandexDictAndTrans - работа с API Яндекс.Переводчик и Словарь https://ru.stackoverflow.com/q/1091429/222542
 - XmlAndDb - чтение и запись в XML файл, чтение данных из БД и запись в XML https://ru.stackoverflow.com/a/1093213/222542
 - DbWithProgress - получение данных из БД, запись данных в файл, отображение процесса с пом. ProgressBar https://ru.stackoverflow.com/q/1098410/222542
+- WpfAppTextBoxSelectWord - WpfAppTextBoxSelectWord - определение по двойному клику выбранного слова в TextBox, и вывод для него перевода на анг.язык https://ru.stackoverflow.com/q/1098971/222542
