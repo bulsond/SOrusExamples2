@@ -14,3 +14,4 @@
 - DbWithProgress - получение данных из БД, запись данных в файл, отображение процесса с пом. ProgressBar https://ru.stackoverflow.com/q/1098410/222542
 - WpfAppTextBoxSelectWord - определение по двойному клику выбранного слова в TextBox, и вывод для него перевода на анг.язык https://ru.stackoverflow.com/q/1098971/222542
 - WindowsFormsDGVSearch - пример фильтрации отображаемых данных в DGV https://ru.stackoverflow.com/q/1103091/222542
+- WindowsForms2ComboBoxes - работа с 2 ComboBoxами заполняемыми из БД https://ru.stackoverflow.com/a/1108261/222542
