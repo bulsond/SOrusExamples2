@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsDGVDisconnected", "WindowsFormsDGVDisconnected\WindowsFormsDGVDisconnected.csproj", "{EC2F020A-75C1-42D7-AD17-51493FC620DE}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "DatabaseDGVDisconnected", "DatabaseDGVDisconnected\DatabaseDGVDisconnected.sqlproj", "{28B82DCD-2ED6-49CF-A6CB-15D5C23049DF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EC2F020A-75C1-42D7-AD17-51493FC620DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC2F020A-75C1-42D7-AD17-51493FC620DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC2F020A-75C1-42D7-AD17-51493FC620DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC2F020A-75C1-42D7-AD17-51493FC620DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28B82DCD-2ED6-49CF-A6CB-15D5C23049DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28B82DCD-2ED6-49CF-A6CB-15D5C23049DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28B82DCD-2ED6-49CF-A6CB-15D5C23049DF}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{28B82DCD-2ED6-49CF-A6CB-15D5C23049DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28B82DCD-2ED6-49CF-A6CB-15D5C23049DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28B82DCD-2ED6-49CF-A6CB-15D5C23049DF}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E1E9BA5D-4921-45C7-B40E-E69F2FA301BD}
+	EndGlobalSection
+EndGlobal

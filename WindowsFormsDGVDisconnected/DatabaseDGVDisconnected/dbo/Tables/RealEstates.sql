@@ -1,0 +1,8 @@
+﻿CREATE TABLE [dbo].[RealEstates]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [City] NVARCHAR(50) NOT NULL, 
+    [Street] NVARCHAR(50) NOT NULL, 
+    [Building] INT NOT NULL DEFAULT 0, 
+    [Apartment] INT NOT NULL DEFAULT 0
+)
