@@ -140,7 +140,7 @@ namespace ConsoleAppRecords.Services
             var employee = _records.GetById(id);
             if (employee == null)
             {
-                Console.WriteLine($"Досье с номером {id} не найдена!");
+                Console.WriteLine($"Досье с номером {id} не найдено!");
                 PrintInputError();
                 return;
             }
@@ -148,7 +148,7 @@ namespace ConsoleAppRecords.Services
             if (IsAgreedDeleteEmployee(employee))
             {
                 _records.Remove(employee);
-                Console.WriteLine($"Досье с номером {id} удалена!");
+                Console.WriteLine($"Досье с номером {id} удалено!");
             }
             else
             {
@@ -181,7 +181,7 @@ namespace ConsoleAppRecords.Services
 
         private bool IsAgreedDeleteEmployee(Employee employee)
         {
-            int answer = 0;
+            int answer = -1;
             do
             {
                 Console.WriteLine($"Вы согласны удалить \"{employee}\"?");
@@ -200,7 +200,7 @@ namespace ConsoleAppRecords.Services
                 }
             } while (true);
 
-            return answer == 1;
+            return answer >= 1;
         }
 
         private void PrintBye()
