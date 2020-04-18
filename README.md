@@ -16,3 +16,4 @@
 - WindowsFormsDGVSearch - пример фильтрации отображаемых данных в DGV https://ru.stackoverflow.com/q/1103091/222542
 - WindowsForms2ComboBoxes - работа с 2 ComboBoxами заполняемыми из БД https://ru.stackoverflow.com/a/1108261/222542
 - WindowsFormsDGVDisconnected - работа с DGV через DataTable https://ru.stackoverflow.com/a/1111965/222542
+- ConsoleAppRecords - консольная программа с меню анкет https://ru.stackoverflow.com/q/1112091/222542
