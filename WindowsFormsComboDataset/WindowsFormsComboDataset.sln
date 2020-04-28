@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsComboDataset", "WindowsFormsComboDataset\WindowsFormsComboDataset.csproj", "{288923D0-3D76-445F-AE1C-3FF53628B8A6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{288923D0-3D76-445F-AE1C-3FF53628B8A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{288923D0-3D76-445F-AE1C-3FF53628B8A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{288923D0-3D76-445F-AE1C-3FF53628B8A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{288923D0-3D76-445F-AE1C-3FF53628B8A6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {245B55F3-C852-4BAE-B720-8A5AAF06BFAB}
+	EndGlobalSection
+EndGlobal
