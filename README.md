@@ -18,3 +18,4 @@
 - WindowsFormsDGVDisconnected - работа с DGV через DataTable https://ru.stackoverflow.com/a/1111965/222542
 - ConsoleAppRecords - консольная программа с меню анкет https://ru.stackoverflow.com/q/1112091/222542
 - WindowsFormsGetWebApi получение и отображение данных Web API JSON
+- ToExcel чтение и сохранение данных из/в файл Excel.
