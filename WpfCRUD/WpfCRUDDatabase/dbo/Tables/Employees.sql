@@ -1,0 +1,7 @@
+﻿CREATE TABLE [dbo].[Employees]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY,
+	[LastName] NVARCHAR(150) NOT NULL,
+	[FirstName] NVARCHAR(100) NOT NULL,
+	[Phone] NVARCHAR(100),
+)

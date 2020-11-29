@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="WpfUI.Views.MainView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfUI.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="750">
+    <Canvas Height="400" Width="750">
+        <TextBlock Canvas.Left="70" Canvas.Top="99" Text="Имя"/>
+        <TextBlock Canvas.Left="70" Canvas.Top="135" Text="Фамилия"/>
+        <TextBlock Canvas.Left="70" Canvas.Top="171" Text="Телефон"/>
+        <TextBox Canvas.Left="134" Canvas.Top="99" Text="{Binding FirstName}"  Width="120"/>
+        <TextBox Canvas.Left="134" Canvas.Top="133" Text="{Binding LastName}" Width="120"/>
+        <TextBox Canvas.Left="134" Canvas.Top="169" Text="{Binding Phone}" Width="120"/>
+        <Button Content="Добавить" Command="{Binding Add}" Canvas.Left="62" Canvas.Top="225"/>
+        <Button Content="Сохранить" Command="{Binding Save}" Canvas.Left="128" Canvas.Top="225" Width="75"/>
+        <Button Content="Удалить" Command="{Binding Delete}" Canvas.Left="214" Canvas.Top="225"/>
+        <Button Content="Назад" Command="{Binding Prev}" Canvas.Left="82" Canvas.Top="268"/>
+        <Button Content="Вперед" Command="{Binding Next}" Canvas.Left="214" Canvas.Top="268"/>
+        <DataGrid Height="358"
+                  Width="450"
+                  Canvas.Left="282"
+                  Canvas.Top="21"
+                  IsReadOnly="True"
+                  AlternatingRowBackground="LightCyan"
+                  AutoGenerateColumns="False"
+                  ItemsSource="{Binding People}"
+                  SelectedItem="{Binding SelectedEmployee}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="П/Н" Binding="{Binding OrderNumber}" Width="50"/>
+                <DataGridTextColumn Header="Фамилия" Binding="{Binding LastName}" Width="150"/>
+                <DataGridTextColumn Header="Имя" Binding="{Binding FirstName}" Width="100"/>
+                <DataGridTextColumn Header="Телефон" Binding="{Binding Phone}" Width="100"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+
+    </Canvas>
+</UserControl>
