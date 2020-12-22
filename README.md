@@ -2,6 +2,7 @@
 Второй репозиторий ответов https://ru.stackoverflow.com/
 
 ## Примеры
+- TDDdemo - пример на разработку через тестирование https://ru.stackoverflow.com/q/1221866/222542
 - WpfCRUD - пример WPF приложения с CRUD операциями с SQL Server https://ru.stackoverflow.com/q/1211056/222542
 - WinFormsDownloadList - асинхр. запросы к сайту по формируемому списку названий файлов
 - WinFormsListViewPrint - печать данных из ListView https://ru.stackoverflow.com/a/1064024/222542
